@@ -1,2 +1,2 @@
-# demo_database
-Python tools using sqlalchemy for interacting with the demo database.
+# demo_databases
+Python tools using sqlalchemy for interacting with the demo databases.

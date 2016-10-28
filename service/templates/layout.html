@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Demo Databases</title>
+</head>
+<body>
+  <div class="message_flashing">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li> {{ message }} </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+  </div>
+  <div class="content_container">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

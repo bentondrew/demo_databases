@@ -1,4 +1,4 @@
-FROM drewantech/drewantech_common:0.1.0
+FROM drewantech/demo_common:0.1.0
 MAINTAINER Benton Drew <benton.s.drew@drewantech.com>
 USER root
 RUN rm test_common.py

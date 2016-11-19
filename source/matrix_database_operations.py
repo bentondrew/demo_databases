@@ -13,7 +13,7 @@ from demo_common.matrix_database_common \
             Matrix,
             Dimension,
             Point)
-from demo_database_web_service_common \
+from demo_databases.demo_database_web_service_common \
     import (db_user, db_password)
 
 

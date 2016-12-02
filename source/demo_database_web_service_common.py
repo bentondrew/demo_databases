@@ -4,3 +4,5 @@
 
 db_user = 'web_service_admin'
 db_password = 'web_service_admin'
+db_host = 'postgres'
+db_port = '5432'

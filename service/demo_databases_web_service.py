@@ -9,10 +9,10 @@ from flask import (Flask,
                    url_for)
 from os import urandom
 from demo_databases.matrix_database_operations \
-   import (create_database as matrix_create_database,
-           drop_database as matrix_drop_database,
-           create_tables as matrix_create_tables,
-           drop_tables as matrix_drop_tables)
+    import (create_database as matrix_create_database,
+            drop_database as matrix_drop_database,
+            create_tables as matrix_create_tables,
+            drop_tables as matrix_drop_tables)
 
 app = Flask(__name__)
 app.secret_key = urandom(32)

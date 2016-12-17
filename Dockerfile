@@ -7,4 +7,4 @@ ADD service/ .
 ENV FLASK_APP demo_databases_web_service.py
 USER python_user
 ENTRYPOINT ["python3", "-m", "flask", "run"]
-CMD ["--host=127.0.0.2", "--port=5001"]
+CMD ["--host=0.0.0.0", "--port=5001"]

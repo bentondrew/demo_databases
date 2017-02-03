@@ -4,8 +4,6 @@
 
 from drewantech_common.postgres_database \
     import (connect_to_database,
-            generate_create_database_command,
-            generate_drop_database_command,
             execute_postgres_command)
 from demo_common.matrix_database_common \
     import (database_name,
@@ -24,8 +22,7 @@ def create_database():
                            database_host=db_host,
                            database_port=db_port,
                            database_name=db_user),
-                           command=generate_create_database_command(
-                           database_name))
+                           command='CREATE DATABASE {}'.format(database_name))
 
 
 def drop_database():
@@ -35,8 +32,7 @@ def drop_database():
                            database_host=db_host,
                            database_port=db_port,
                            database_name=db_user),
-                           command=generate_drop_database_command(
-                           database_name))
+                           command='DROP DATABASE {}'.format(database_name))
 
 
 def create_tables():

@@ -23,6 +23,7 @@ def create_database():
                            database_port=db_port,
                            database_name=db_user),
                            command='CREATE DATABASE {}'.format(database_name))
+  #  TODO: Restrict access to authorized database users.
 
 
 def drop_database():

@@ -8,6 +8,9 @@ from flask import (Flask,
                    redirect,
                    url_for)
 from os import urandom
+from demo_databases.database_operations \
+    import (create_users,
+            drop_users)
 from demo_databases.matrix_database_operations \
     import (create_database as matrix_create_database,
             drop_database as matrix_drop_database,
@@ -23,46 +26,35 @@ def index():
   return render_template('index.html')
 
 
-@app.route('/matrix', methods=['GET'])
-def matrix_database_operations():
-  return render_template('matrix_database_operations.html')
-
-
-@app.route('/matrix_database_create')
-def matrix_database_create():
+@app.route('/databases_initialization')
+def databases_initialization():
   try:
+    flash('Attempting to create database users.')
+    create_users()
+    flash('Successfully created database users.')
+    flash('Attempting to create matrix database.')
     matrix_create_database()
     flash('Successfully created matrix database.')
-  except Exception as e:
-    flash('Error in creating matrix database: {}'.format(e))
-  return redirect(url_for('matrix_database_operations'))
-
-
-@app.route('/matrix_table_create')
-def matrix_table_create():
-  try:
+    flash('Attempting to create matrix database tables.')
     matrix_create_tables()
     flash('Successfully created matrix database tables.')
   except Exception as e:
-    flash('Error in creating matrix database tables: {}'.format(e))
-  return redirect(url_for('matrix_database_operations'))
+    raise flash('Error in initializing databases: {}'.format(e))
+  return redirect(url_for('index'))
 
 
-@app.route('/matrix_table_drop')
-def matrix_table_drop():
+@app.route('/databases_tear_down')
+def databases_tear_down():
   try:
+    flash('Attempting to drop matrix database tables.')
     matrix_drop_tables()
     flash('Successfully dropped matrix database tables.')
-  except Exception as e:
-    flash('Error in dropping matrix database tables: {}'.format(e))
-  return redirect(url_for('matrix_database_operations'))
-
-
-@app.route('/matrix_database_drop')
-def matrix_database_drop():
-  try:
+    flash('Attempting to drop matrix database.')
     matrix_drop_database()
     flash('Successfully dropped matrix database.')
+    flash('Attempting to drop database users.')
+    drop_users()
+    flash('Successfully dropped database users.')
   except Exception as e:
-    flash('Error in dropping matrix database: {}'.format(e))
-  return redirect(url_for('matrix_database_operations'))
+    raise flash('Error in tearing down databases: {}'.format(e))
+  return redirect(url_for('index'))

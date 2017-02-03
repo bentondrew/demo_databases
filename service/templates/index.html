@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-  <h1>Databases which can be operated on: </h1>
-  <a href="{{ url_for('matrix_database_operations') }}">Matrix</a>
+  <h1>Initialize Databases: </h1>
+  <a href="{{ url_for('databases_initialization') }}">Matrix</a>
+  <br>
+  <h1>Tear Down Databases: </h1>
+  <a href="{{ url_for('databases_tear_down') }}">Matrix</a>
 {% endblock %}

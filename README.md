@@ -1,10 +1,10 @@
 # demo_databases
 Web server for setting up and tearing down the demo databases.
 
-To build the docker image drewantech/demo_databases:0.4.1 via ssh:
+To build the docker image drewantech/demo_databases:0.5.0 via ssh:
 
-docker build -t drewantech/demo_databases:0.4.1 git@github.com:Drewan-Tech/demo_databases.git
+docker build -t drewantech/demo_databases:0.5.0 git@github.com:Drewan-Tech/demo_databases.git
 
-To build the docker image drewantech/demo_databases:0.4.1 via https:
+To build the docker image drewantech/demo_databases:0.5.0 via https:
 
-docker build -t drewantech/demo_databases:0.4.1 https://github.com/Drewan-Tech/demo_databases.git
+docker build -t drewantech/demo_databases:0.5.0 https://github.com/Drewan-Tech/demo_databases.git

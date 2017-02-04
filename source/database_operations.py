@@ -17,8 +17,11 @@ def create_users():
                              database_host=db_host,
                              database_port=db_port,
                              database_name=db_user),
-                             command=('CREATE USER {}'
-                                      .format(user)))
+                             command=("CREATE USER {} WITH PASSWORD '{}'"
+                                      .format(user,
+                                              users_to_manage
+                                              [user]
+                                              ['password'])))
 
 
 def drop_users():

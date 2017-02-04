@@ -13,6 +13,6 @@ users_to_manage = {'random_matrix':
                     'random_matrix'},
                    'matrix_mult':
                    {'authorized_databases':
-                    [],
+                    ['matrix_database'],
                     'password':
                     'matrix_mult'}}
